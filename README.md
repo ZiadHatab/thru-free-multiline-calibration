@@ -20,21 +20,21 @@ Below, you can see an illustration of the relevant standards for the thru-free m
 
 ## Code requirements
 
-The `multiline.py` or `uncMultiline.py` scripts must be in the same folder as your main script and imported. The difference between the two scripts is that `multiline.py` is a pure NumPy implementation, whereas `uncMultiline.py` uses in addition the `metas_unclib` package to support uncertainty propagation.
+The [`multiline.py`][multilinepy] or [`uncMultiline.py`][uncMultilinepy] scripts must be in the same folder as your main script and imported. The difference between the two scripts is that [`multiline.py`][multilinepy] is a pure NumPy implementation, whereas [`uncMultiline.py`][uncMultilinepy] uses in addition the [`metas_unclib`][metas] package to support uncertainty propagation.
 
-To use `multiline.py`, you will also need to have `numpy` and `scikit-rf` installed in your Python environment. To install these packages, run the following command:
+To use [`multiline.py`][multilinepy], you will also need to have [`numpy`][numpy] and [`scikit-rf`][skrf] installed in your Python environment. To install these packages, run the following command:
 
 ```
 python -m pip install numpy scikit-rf -U
 ```
 
-For `uncMultiline.py`, you additionally need to install `metas_unclib`:
+For [`uncMultiline.py`][uncMultilinepy], you additionally need to install [`metas_unclib`][metas]:
 
 ```
 python -m pip install metas_unclib -U
 ```
 
-To check the dependencies for the examples, simply refer to the header of the files themselves.
+Regarding the dependencies for the example files, simply refer to the header of the files themselves.
 
 ## Sample code
 
@@ -60,7 +60,7 @@ reflect = SHORT
 reflect_est = -1
 reflect_offset = 0
 ereff_est = 2.5-0.00001j
-********
+
 # define the calibration
 cal = multiline(lines=lines, line_lengths=line_lengths, reflect=reflect, 
                reflect_est=reflect_est, reflect_offset=reflect_offset, 
@@ -71,14 +71,14 @@ cal = multiline(lines=lines, line_lengths=line_lengths, reflect=reflect,
 cal.run_multiline()
 
 dut = rf.Network('measured_dut.s2p')
-cal_dut = cal.apply_cal(dut) # apply cal to a dut
+cal_dut, _ = cal.apply_cal(dut) # apply cal to a dut
 ```
 
 ## Example
 
-In the `Measurements` folder, you will find measurements of a multiline kit based on microstrip standards. Multiple sweeps were conducted, so they are zipped. The SCPI code used to collect the measurements can be found in my other repository: <https://github.com/ZiadHatab/scpi-anritsu-vectorstar>
+In the [`Measurements`][Measurements] folder, you will find measurements of a multiline kit based on microstrip standards. Multiple sweeps were conducted, so they are zipped. The SCPI code used to collect the measurements can be found in my other repository: <https://github.com/ZiadHatab/scpi-anritsu-vectorstar>
 
-The results from `example.py` are provided below. To see the results with uncertainty, refer to [1], or run the script `example_with_unc.py`.
+The results from [`example.py`][examplepy] are provided below. To see the results with uncertainty, refer to [1], or run the script [`example_with_unc.py`][example_with_uncpy].
 
 ![S11 and S21 of calibrated DUT (30 ohm stepped-impedance). The thru standard used in multiline TRL has a length of zero.](Images/result_1.png)
 *S11 and S21 of calibrated DUT (30 ohm stepped-impedance). The thru standard used in multiline TRL has a length of zero.*
@@ -88,13 +88,25 @@ The results from `example.py` are provided below. To see the results with uncert
 
 ## Crediting
 
-If you use the method presented in this document, please consider citing [1]. If you want to use the measurement data, please cite [2].
+If you found yourself using the method presented here in a publication, please consider citing [1]. If you want to use the measurement data, please cite [2].
 
 ## References
 
-- [1] Z. Hatab, M. E. Gadringer, and W. Bösch, "A Thru-free Multiline Calibration" 2023, e-print:
-- [2] Z. Hatab, "A Thru-free Multiline Calibration: Dataset and Code". Graz University of Technology, May. 06, 2023. doi:
+- [1] Z. Hatab, M. E. Gadringer, and W. Bösch, "A Thru-free Multiline Calibration" 2023, e-print: _to be updated on 8-May-2023_
+- [2] Z. Hatab, "A Thru-free Multiline Calibration: Dataset and Code". Graz University of Technology, doi: _to be updated on 8-May-2023_
 
 ## License
 
 The code in this repository is licensed under the BSD-3-Clause license. If you want to use the version with uncertainty propagation, you also need to install the METAS UncLib package, which has its own separate license. You can find more information about the package at <https://www.metas.ch/metas/en/home/fabe/hochfrequenz/unclib.html>
+
+
+[multilinepy]: https://github.com/ZiadHatab/thru-free-multiline-calibration/blob/main/multiline.py
+[uncMultilinepy]: https://github.com/ZiadHatab/thru-free-multiline-calibration/blob/main/uncMultiline.py
+[examplepy]: https://github.com/ZiadHatab/thru-free-multiline-calibration/blob/main/example.py
+[example_with_uncpy]: https://github.com/ZiadHatab/thru-free-multiline-calibration/blob/main/example_with_unc.py
+[Measurements]: https://github.com/ZiadHatab/thru-free-multiline-calibration/blob/main/Measurements/
+
+[numpy]: https://github.com/numpy/numpy
+[skrf]: https://github.com/scikit-rf/scikit-rf
+[matplot]: https://github.com/matplotlib/matplotlib
+[metas]: https://github.com/wollmich/metas-unclib-python-wrapper
