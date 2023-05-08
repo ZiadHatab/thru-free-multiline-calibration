@@ -93,7 +93,7 @@ If you found yourself using the method presented here in a publication, please c
 ## References
 
 - [1] Z. Hatab, M. E. Gadringer, and W. Bösch, "A Thru-free Multiline Calibration" 2023, e-print: <https://arxiv.org/abs/2305.03597>
-- [2] Z. Hatab, "A Thru-free Multiline Calibration: Dataset and Code". Graz University of Technology, doi: _to be updated on 8-May-2023_
+- [2] Z. Hatab, "A Thru-free Multiline Calibration: Dataset and Code". Graz University of Technology, May 08, 2023. doi: [10.3217/mgd4n-gq267](https://doi.org/10.3217/mgd4n-gq267)
 
 ## License
 
