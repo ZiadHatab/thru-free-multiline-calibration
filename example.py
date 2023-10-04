@@ -239,9 +239,6 @@ if __name__=='__main__':
         mu = mag2db(dut_cal3_S[:,0,0])
         ax.plot(f*1e-9, mu, lw=2, marker='>', markevery=30, markersize=10,
                 label='Thru-free (port-A network-reflect)')
-        mu = mag2db(dut_cal4_S[:,0,0])
-        ax.plot(f*1e-9, mu, lw=2, marker='<', markevery=30, markersize=10,
-                label='Thru-free (port-B network-reflect)')
         ax.set_xlabel('Frequency (GHz)')
         ax.set_xlim(0,150)
         ax.set_xticks(np.arange(0,151,30))
@@ -259,9 +256,6 @@ if __name__=='__main__':
         mu = mag2db(dut_cal3_S[:,1,0])
         ax.plot(f*1e-9, mu, lw=2, marker='>', markevery=30, markersize=10,
                 label='Thru-free (port-A network-reflect)')
-        mu = mag2db(dut_cal4_S[:,1,0])
-        ax.plot(f*1e-9, mu, lw=2, marker='<', markevery=30, markersize=10,
-                label='Thru-free (port-B network-reflect)')
         ax.set_xlabel('Frequency (GHz)')
         ax.set_xlim(0,150)
         ax.set_xticks(np.arange(0,151,30))
@@ -279,9 +273,6 @@ if __name__=='__main__':
         mu = np.angle(dut_cal3_S[:,0,0], deg=True)
         ax.plot(f*1e-9, mu, lw=2, marker='>', markevery=30, markersize=10,
                 label='Thru-free (port-A network-reflect)')
-        mu = np.angle(dut_cal4_S[:,0,0], deg=True)
-        ax.plot(f*1e-9, mu, lw=2, marker='<', markevery=30, markersize=10,
-                label='Thru-free (port-B network-reflect)')
         ax.set_xlabel('Frequency (GHz)')
         ax.set_xlim(0,150)
         ax.set_xticks(np.arange(0,151,30))
@@ -299,9 +290,6 @@ if __name__=='__main__':
         mu = np.angle(dut_cal3_S[:,1,0], deg=True)
         ax.plot(f*1e-9, mu, lw=2, marker='>', markevery=30, markersize=10,
                 label='Thru-free (port-A network-reflect)')
-        mu = np.angle(dut_cal4_S[:,1,0], deg=True)
-        ax.plot(f*1e-9, mu, lw=2, marker='<', markevery=30, markersize=10,
-                label='Thru-free (port-B network-reflect)')
         ax.set_xlabel('Frequency (GHz)')
         ax.set_xlim(0,150)
         ax.set_xticks(np.arange(0,151,30))

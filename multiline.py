@@ -11,8 +11,9 @@ Improving The Reliability of The Multiline TRL Calibration Algorithm,"
 2022 98th ARFTG Microwave Measurement Conference (ARFTG), 
 Las Vegas, NV, USA, 2022, pp. 1-5, doi: 10.1109/ARFTG52954.2022.9844064.
 
-[2] Z. Hatab, M. E. Gadringer, and W. Bösch, 
-"A Thru-free Multiline Calibration," 2023, doi: arxiv
+[2] Z. Hatab, M. E. Gadringer, and W. Bösch, "A Thru-free Multiline Calibration," 
+in IEEE Transactions on Instrumentation and Measurement, vol. 72, pp. 1-9, 2023, 
+doi: 10.1109/TIM.2023.3308226.
 """
 
 import skrf as rf
